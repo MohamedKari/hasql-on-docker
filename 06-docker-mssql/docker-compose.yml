@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password1_
+      - MSSQL_PID=Developer
+    volumes: 
+      - /Users/mo/code/hasql-on-docker/6-docker-mssql/data:/var/opt/mssql/data
+      - /Users/mo/code/hasql-on-docker/6-docker-mssql/secrets:/var/opt/mssql/secrets 
+
+# -e 'MSSQL_DATA_DIR=/my/file/path'
+# -v <host directory>/data:/var/opt/mssql/data -v <host directory>/log:/var/opt/mssql/log -v <host directory>/secrets:/var/opt/mssql/secrets 
+
+
+# TODO: 
+# - Volume Share
+# - Auto

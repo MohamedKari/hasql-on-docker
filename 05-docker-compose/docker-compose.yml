@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  dbservice1:
+    image: docker.io/mokari94/dbservice:latest
+    ports:
+      - "10000:8000"
+    environment:
+      - LICENSE_KEY=SCOTLAND
+    volumes:
+      - /Users/mo/code/hasql-on-docker/5-docker-compose/data:/app/data
+
+  dbservice2:
+    image: docker.io/mokari94/dbservice:latest
+    ports:
+      - "10001:8000"
+    environment:
+      - LICENSE_KEY=SCOTLAND
+    volumes:
+      - /Users/mo/code/hasql-on-docker/5-docker-compose/data:/app/data
